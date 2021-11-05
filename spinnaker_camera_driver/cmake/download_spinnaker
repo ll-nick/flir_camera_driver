@@ -26,15 +26,15 @@
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-import cookielib
-import cStringIO
+import http.cookiejar
+from io import BytesIO
 import logging
 import shutil
 import subprocess
 import sys
 import tarfile
 import urllib
-import urllib2
+from urllib.request import build_opener, HTTPCookieProcessor
 import os
 import glob
 
@@ -146,7 +146,8 @@ ARCHS = {
 OS_LIBRARY_VERSION = {
   'jessie': 'current',
   'xenial': 'current',
-  'bionic': 'future'
+  'bionic': 'future',
+  'focal': 'future'
 }
 
 arch = sys.argv[1]
@@ -167,8 +168,8 @@ logging.info("Destination folder is %s", destination_folder)
 
 if not os.path.exists(os.path.join(os.getcwd(), "usr/lib/")):
     if not os.path.exists(os.path.join(os.getcwd(), folder_name)):
-        cj = cookielib.CookieJar()
-        opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+        cj = http.cookiejar.CookieJar()
+        opener = build_opener(HTTPCookieProcessor(cj))
         opener.addheaders = [
             ('User-agent', 'Mozilla/5.0'),
             ('Referer', 'https://www.ptgrey.com')]
@@ -177,7 +178,7 @@ if not os.path.exists(os.path.join(os.getcwd(), "usr/lib/")):
         resp = opener.open(archive_url)
 
         logging.info("Unpacking tarball.")
-        with tarfile.open(mode="r:gz", fileobj=cStringIO.StringIO(resp.read())) as tar:
+        with tarfile.open(mode="r:gz", fileobj=BytesIO(resp.read())) as tar:
             tar.extractall()
 
     logging.info("Unpacking debs.")
