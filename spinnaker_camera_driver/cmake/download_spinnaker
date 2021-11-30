@@ -73,6 +73,7 @@ ARCHS = {
         'linux_arch': 'amd64',
         'current': '16.04',
         'future': '18.04',
+        'evenfuturer': '20.04',
         'type': 'deb',
         'folder_name': 'spinnaker-1.27.0.48-amd64',
         'shared_library': 'usr/lib/libSpinnaker.so.1.27.0.48',
@@ -120,24 +121,25 @@ ARCHS = {
         'linux_arch': 'arm64',
         'current': '16.04',
         'future': '18.04',
+        'evenfuturer': '20.04',
         'type': 'deb',
-        'shared_library': 'usr/lib/libSpinnaker.so.1.27.0.48',
-        'folder_name': 'spinnaker-1.27.0.48_arm64',
+        'shared_library': 'usr/lib/libSpinnaker.so.2.2.0.48',
+        'folder_name': 'spinnaker-2.2.0.48_arm64',
         'debs': [
-            'libspinnaker-1.27.0.48_arm64.deb',
-            'libspinnaker-1.27.0.48_arm64-dev.deb',
-            'libspinnaker-c-1.27.0.48_arm64.deb',
-            'libspinnaker-c-1.27.0.48_arm64-dev.deb',
-            'libspinvideo-1.27.0.48_arm64.deb',
-            'libspinvideo-1.27.0.48_arm64-dev.deb',
-            'libspinvideo-c-1.27.0.48_arm64.deb',
-            'libspinvideo-c-1.27.0.48_arm64-dev.deb',
-            'spinnaker-1.27.0.48_arm64.deb',
-            'spinnaker-doc-1.27.0.48_arm64.deb',
-            'spinupdate-1.27.0.48_arm64.deb',
-            'spinupdate-1.27.0.48_arm64-dev.deb',
-            'spinview-qt-1.27.0.48_arm64.deb',
-            'spinview-qt-1.27.0.48_arm64-dev.deb'
+            'libspinnaker-2.2.0.48_arm64.deb',
+            'libspinnaker-2.2.0.48_arm64-dev.deb',
+            'libspinnaker-c-2.2.0.48_arm64.deb',
+            'libspinnaker-c-2.2.0.48_arm64-dev.deb',
+            'libspinvideo-2.2.0.48_arm64.deb',
+            'libspinvideo-2.2.0.48_arm64-dev.deb',
+            'libspinvideo-c-2.2.0.48_arm64.deb',
+            'libspinvideo-c-2.2.0.48_arm64-dev.deb',
+            'spinnaker-2.2.0.48_arm64.deb',
+            'spinnaker-doc-2.2.0.48_arm64.deb',
+            'spinupdate-2.2.0.48_arm64.deb',
+            'spinupdate-2.2.0.48_arm64-dev.deb',
+            'spinview-qt-2.2.0.48_arm64.deb',
+            'spinview-qt-2.2.0.48_arm64-dev.deb'
         ]
     }
 }
@@ -147,7 +149,7 @@ OS_LIBRARY_VERSION = {
   'jessie': 'current',
   'xenial': 'current',
   'bionic': 'future',
-  'focal': 'future'
+  'focal': 'evenfuturer'
 }
 
 arch = sys.argv[1]
