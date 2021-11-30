@@ -41,7 +41,7 @@ import glob
 logging.basicConfig(level=logging.INFO)
 
 URL_TEMPLATE = URL_TEMPLATES = {
-    'deb': 'https://packages.clearpathrobotics.com/stable/flir/Spinnaker/Ubuntu{version}/spinnaker-1.27.0.48-Ubuntu{version}-{arch}-pkg.tar.gz',
+    'deb': 'https://packages.clearpathrobotics.com/stable/flir/Spinnaker/Ubuntu{version}/spinnaker-2.2.0.48-Ubuntu{version}-{arch}-pkg.tar.gz',
     'src': None         # if we ever have non-deb archives that require manual extraction, those package URLS will go here.
 }
 
