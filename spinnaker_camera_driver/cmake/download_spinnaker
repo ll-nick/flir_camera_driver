@@ -117,7 +117,7 @@ ARCHS = {
         ]
     },
     'armv8':  {
-        'linux_arch': 'armh64',
+        'linux_arch': 'arm64',
         'current': '16.04',
         'future': '18.04',
         'type': 'deb',
